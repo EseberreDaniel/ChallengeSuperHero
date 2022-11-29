@@ -8,4 +8,5 @@ object Constants {
     const val RANGE = 30
     const val AUX_VALUE = 10
     const val POSITION_END = 731
+    const val ID_ARGUMENT = "id_super_hero"
 }

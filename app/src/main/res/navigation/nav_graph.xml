@@ -8,6 +8,16 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.challengesuperhero.framework.presentation.list.view.ListFragment"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/actionlistFragmentToDetailFragment"
+            app:destination="@+id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.challengesuperhero.framework.presentation.detail.view.DetailFragment"
+        tools:layout="@layout/fragment_detail" />
 
 </navigation>
