@@ -3,6 +3,7 @@ package com.challengesuperhero.usecases
 import com.challengesuperhero.data.SuperHeroRepository
 import com.challengesuperhero.domain.ImageResponse
 import com.challengesuperhero.domain.Result
+import com.challengesuperhero.framework.presentation.constants.Constants
 import javax.inject.Inject
 
 class GetImageSuperHeroUseCase @Inject constructor(
@@ -15,12 +16,16 @@ class GetImageSuperHeroUseCase @Inject constructor(
     ): MutableList<ImageResponse> {
         val listImageResponse = mutableListOf<ImageResponse>()
         for (i in positionInitial..positionEnd) {
-            when (val response = superHeroRepository.getImageById(i.toString())) {
-                is Result.Success -> {
-                    listImageResponse.add(response.result)
-                }
-                else -> {
+            if (i > Constants.POSITION_END) {
+                return listImageResponse
+            } else {
+                when (val response = superHeroRepository.getImageById(i.toString())) {
+                    is Result.Success -> {
+                        listImageResponse.add(response.result)
+                    }
+                    else -> {
 
+                    }
                 }
             }
         }

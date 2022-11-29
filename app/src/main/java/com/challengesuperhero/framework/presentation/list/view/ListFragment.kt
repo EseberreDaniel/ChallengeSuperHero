@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.challengesuperhero.databinding.FragmentListBinding
 import com.challengesuperhero.domain.ImageResponse
+import com.challengesuperhero.framework.presentation.constants.Constants
 import com.challengesuperhero.framework.presentation.extensionFunctions.viewBinding
 import com.challengesuperhero.framework.presentation.list.adapters.ImageListAdapter
 import com.challengesuperhero.framework.presentation.list.viewModel.ListViewModel
@@ -37,7 +38,7 @@ class ListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initComponents()
         initObservers()
-        viewModel.getImageSuperHero(1,30)
+        viewModel.getImageSuperHero(Constants.POSITION_INITIAL,Constants.RANGE)
     }
 
     private fun initObservers() {
@@ -55,6 +56,12 @@ class ListFragment : Fragment() {
             override fun clickImage(image: ImageResponse) {
 
             }
+
+            override fun getMoreSuperHeroes(positionInitial: Int, positionEnd: Int) {
+                viewModel.getImageSuperHero(positionInitial, positionEnd)
+            }
+
+
         })
         binding.recyclerHeroes.adapter = imageListAdapter
     }

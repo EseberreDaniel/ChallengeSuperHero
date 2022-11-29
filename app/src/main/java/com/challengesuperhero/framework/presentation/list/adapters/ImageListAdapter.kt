@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.challengesuperhero.databinding.ItemSuperheroBinding
 import com.challengesuperhero.domain.ImageResponse
+import com.challengesuperhero.framework.presentation.constants.Constants
 
 class ImageListAdapter(
     private val listener: ImageListener
@@ -38,10 +39,17 @@ class ImageListAdapter(
             binding.root.setOnClickListener {
                 listener.clickImage(image)
             }
+            if (position == listImageResponse.size - Constants.AUX_VALUE) {
+                listener.getMoreSuperHeroes(
+                    listImageResponse.size + Constants.POSITION_INITIAL,
+                    listImageResponse.size + Constants.RANGE
+                )
+            }
         }
     }
 
     interface ImageListener {
         fun clickImage(image: ImageResponse)
+        fun getMoreSuperHeroes(positionInitial: Int, positionEnd: Int)
     }
 }
