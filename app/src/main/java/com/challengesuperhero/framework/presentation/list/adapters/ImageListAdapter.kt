@@ -34,7 +34,7 @@ class ImageListAdapter(
 
         fun bind(image: ImageResponse, position: Int) {
             binding.name.text = image.name
-            Glide.with(binding.root).load(image.url).centerCrop().into(binding.image)
+            Glide.with(binding.root).load(image.url).into(binding.image)
             binding.root.setOnClickListener {
                 listener.clickImage(image)
             }

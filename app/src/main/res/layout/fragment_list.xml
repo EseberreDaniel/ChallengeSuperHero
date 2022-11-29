@@ -10,7 +10,7 @@
         android:id="@+id/recycler_heroes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingBottom="8dp"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_superhero" />
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import com.challengesuperhero.databinding.FragmentListBinding
 import com.challengesuperhero.domain.ImageResponse
 import com.challengesuperhero.framework.presentation.extensionFunctions.viewBinding
@@ -49,6 +50,7 @@ class ListFragment : Fragment() {
     }
 
     private fun initComponents(){
+        binding.recyclerHeroes.layoutManager = GridLayoutManager(requireContext(),2)
         imageListAdapter = ImageListAdapter(object : ImageListAdapter.ImageListener {
             override fun clickImage(image: ImageResponse) {
 
