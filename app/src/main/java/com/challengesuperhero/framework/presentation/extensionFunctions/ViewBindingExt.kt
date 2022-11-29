@@ -2,12 +2,8 @@ package com.challengesuperhero.framework.presentation.extensionFunctions
 
 import android.os.Handler
 import android.os.Looper
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.annotation.MainThread
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
@@ -16,10 +12,6 @@ import androidx.viewbinding.ViewBinding
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
-inline fun <T : ViewBinding> AppCompatActivity.viewBinding(crossinline factory: (LayoutInflater) -> T) =
-    lazy(LazyThreadSafetyMode.NONE) {
-        factory(layoutInflater)
-    }
 
 inline fun <T : ViewBinding> Fragment.viewBinding(crossinline factory: (View?) -> T): ReadOnlyProperty<Fragment, T> =
     object : ReadOnlyProperty<Fragment, T>, DefaultLifecycleObserver {
@@ -44,16 +36,3 @@ inline fun <T : ViewBinding> Fragment.viewBinding(crossinline factory: (View?) -
             }
         }
     }
-
-inline fun <T : ViewBinding> DialogFragment.viewBinding(crossinline factory: (LayoutInflater) -> T) =
-    lazy(LazyThreadSafetyMode.NONE) {
-        factory(layoutInflater)
-    }
-
-inline fun <T : ViewBinding> ViewGroup.viewBinding(factory: (LayoutInflater, ViewGroup, Boolean) -> T) =
-    factory(LayoutInflater.from(context), this, false)
-
-inline fun <T : ViewBinding> ViewGroup.viewBinding(
-    factory: (LayoutInflater, ViewGroup, Boolean) -> T,
-    attachToRoot: Boolean = false
-) = factory(LayoutInflater.from(context), this, attachToRoot)

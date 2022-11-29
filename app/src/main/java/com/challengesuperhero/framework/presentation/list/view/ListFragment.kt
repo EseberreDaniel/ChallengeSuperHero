@@ -1,14 +1,15 @@
 package com.challengesuperhero.framework.presentation.list.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.challengesuperhero.R
 import com.challengesuperhero.databinding.FragmentListBinding
 import com.challengesuperhero.domain.ImageResponse
@@ -17,6 +18,7 @@ import com.challengesuperhero.framework.presentation.extensionFunctions.viewBind
 import com.challengesuperhero.framework.presentation.list.adapters.ImageListAdapter
 import com.challengesuperhero.framework.presentation.list.viewModel.ListViewModel
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class ListFragment : Fragment() {
@@ -41,7 +43,9 @@ class ListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initComponents()
         initObservers()
-        viewModel.getImageSuperHero(Constants.POSITION_INITIAL, Constants.RANGE)
+        if (viewModel.listImage.value.isNullOrEmpty()) {
+            viewModel.getImageSuperHero(Constants.POSITION_INITIAL, Constants.RANGE)
+        }
     }
 
     private fun initObservers() {
@@ -61,14 +65,26 @@ class ListFragment : Fragment() {
                     bundleOf(Constants.ID_ARGUMENT to image.id)
                 )
             }
-
-            override fun getMoreSuperHeroes(positionInitial: Int, positionEnd: Int) {
-                viewModel.getImageSuperHero(positionInitial, positionEnd)
-            }
         })
         binding.recyclerHeroes.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = imageListAdapter
+            binding.recyclerHeroes.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    val layoutManager = recyclerView.layoutManager as GridLayoutManager?
+                    viewModel.listImage.value?.let { list ->
+                        if (layoutManager != null && layoutManager.findLastCompletelyVisibleItemPosition()
+                            >= list.size - Constants.AUX_VALUE && viewModel.isLoading.value == false
+                        ) {
+                            val positionInitial =
+                                list.size + Constants.POSITION_INITIAL
+                            val positionEnd = list.size + Constants.RANGE
+                            viewModel.getImageSuperHero(positionInitial, positionEnd)
+                        }
+                    }
+                }
+            })
         }
     }
 }

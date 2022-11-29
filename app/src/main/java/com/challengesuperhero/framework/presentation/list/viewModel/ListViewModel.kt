@@ -27,7 +27,7 @@ class ListViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             _isLoading.postValue(true)
             val response = getImageSuperHeroUseCase.invoke(positionInitial, positionEnd)
-            _listImage.postValue(response)
+            _listImage.value?.addAll(response)
             _isLoading.postValue(false)
         }
     }
