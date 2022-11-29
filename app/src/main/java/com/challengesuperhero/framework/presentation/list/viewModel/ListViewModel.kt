@@ -23,7 +23,6 @@ class ListViewModel @Inject constructor(
     private val _isLoading: MutableLiveData<Boolean> = MutableLiveData(false)
     val isLoading: LiveData<Boolean> = _isLoading
 
-
     fun getImageSuperHero(positionInitial: Int, positionEnd: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             _isLoading.postValue(true)
