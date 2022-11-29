@@ -10,6 +10,7 @@
         android:id="@+id/recycler_heroes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        tools:listitem="@layout/item_superhero"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
