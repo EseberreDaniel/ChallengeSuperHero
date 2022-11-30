@@ -18,6 +18,17 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.challengesuperhero.framework.presentation.detail.view.DetailFragment"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail">
+
+        <action
+            android:id="@+id/actionDetailToDialog"
+            app:destination="@+id/statsDialog" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/statsDialog"
+        android:name="com.challengesuperhero.framework.presentation.detail.components.StatsDialogComponent"
+        tools:layout="@layout/stats_dialog" />
 
 </navigation>

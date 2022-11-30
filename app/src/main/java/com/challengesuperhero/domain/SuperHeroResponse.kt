@@ -1,5 +1,7 @@
 package com.challengesuperhero.domain
 
+
+
 data class SuperHeroResponse(
     val id: String,
     val name: String,

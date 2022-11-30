@@ -9,4 +9,17 @@
     <string name="weight">Weight:</string>
     <string name="eye_color">Eye color:</string>
     <string name="hair_color">Hair color:</string>
+    <string name="full_name">Full name:</string>
+    <string name="aliases">Aliases:</string>
+    <string name="place_of_birth">Place of birth:</string>
+    <string name="first_appearance">First appearance:</string>
+    <string name="publisher">Publisher:</string>
+    <string name="alignment">Alignment:</string>
+    <string name="show_stats">Show stats</string>
+    <string name="intelligence">Intelligence:</string>
+    <string name="strength">Strength:</string>
+    <string name="speed">Speed:</string>
+    <string name="power">Power:</string>
+    <string name="combat">Combat:</string>
+    <string name="durability">Durability:</string>
 </resources>

@@ -14,33 +14,29 @@
 
         <TextView
             android:id="@+id/gender"
+            style="@style/TextMediumNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/gender"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            android:text="@string/gender" />
 
         <TextView
             android:id="@+id/gender_value"
+            style="@style/TextMediumBold"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/race"
+            style="@style/TextMediumNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/race"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            android:text="@string/race" />
 
         <TextView
             android:id="@+id/race_value"
+            style="@style/TextMediumBold"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -54,18 +50,16 @@
 
                 <TextView
                     android:id="@+id/height"
+                    style="@style/TextMediumNormal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/height"
-                    android:textSize="16sp"
-                    android:textStyle="normal" />
+                    android:text="@string/height" />
 
                 <TextView
                     android:id="@+id/height_value"
+                    style="@style/TextMediumBold"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -77,18 +71,16 @@
 
                 <TextView
                     android:id="@+id/weight"
+                    style="@style/TextMediumNormal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/weight"
-                    android:textSize="16sp"
-                    android:textStyle="normal" />
+                    android:text="@string/weight" />
 
                 <TextView
                     android:id="@+id/weight_value"
+                    style="@style/TextMediumBold"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
         </LinearLayout>
@@ -105,18 +97,16 @@
 
                 <TextView
                     android:id="@+id/eye"
+                    style="@style/TextMediumNormal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/eye_color"
-                    android:textSize="16sp"
-                    android:textStyle="normal" />
+                    android:text="@string/eye_color" />
 
                 <TextView
                     android:id="@+id/eye_value"
+                    style="@style/TextMediumBold"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -128,18 +118,16 @@
 
                 <TextView
                     android:id="@+id/hair"
+                    style="@style/TextMediumNormal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/hair_color"
-                    android:textSize="16sp"
-                    android:textStyle="normal" />
+                    android:text="@string/hair_color" />
 
                 <TextView
                     android:id="@+id/hair_value"
+                    style="@style/TextMediumBold"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
         </LinearLayout>

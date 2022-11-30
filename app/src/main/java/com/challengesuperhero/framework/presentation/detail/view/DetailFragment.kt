@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.challengesuperhero.R
 import com.challengesuperhero.databinding.FragmentDetailBinding
 import com.challengesuperhero.framework.presentation.constants.Constants
 import com.challengesuperhero.framework.presentation.detail.viewModel.DetailViewModel
@@ -40,7 +43,13 @@ class DetailFragment : Fragment() {
 
     private fun initObservers() {
         viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-            binding.loading.visibility = if (isLoading) View.VISIBLE else View.GONE
+            if (isLoading) {
+                binding.loading.visibility = View.VISIBLE
+                binding.layoutInfo.visibility = View.GONE
+            } else {
+                binding.loading.visibility = View.GONE
+                binding.layoutInfo.visibility = View.VISIBLE
+            }
         }
         viewModel.information.observe(viewLifecycleOwner) { information ->
             information?.let { _info ->
@@ -51,6 +60,13 @@ class DetailFragment : Fragment() {
                     baseValue.text = _info.work.base
                     groupValue.text = _info.connections.groupAffiliation
                     appearanceComponent.setAppearance(_info.appearance)
+                    biographyComponent.setBiography(_info.biography)
+                    binding.showStats.setOnClickListener {
+                        findNavController().navigate(
+                            R.id.actionDetailToDialog,
+                            bundleOf(Constants.STATS_ARGUMENT to _info.powerstats)
+                        )
+                    }
                 }
             }
         }

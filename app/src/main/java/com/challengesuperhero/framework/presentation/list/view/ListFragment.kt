@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -50,7 +51,8 @@ class ListFragment : Fragment() {
 
     private fun initObservers() {
         viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-            binding.loading.visibility = if (isLoading) View.VISIBLE else View.GONE
+            binding.loadingMoreItems.visibility =
+                if (isLoading) View.VISIBLE else View.GONE
         }
         viewModel.listImage.observe(viewLifecycleOwner) { list ->
             imageListAdapter.setData(list)

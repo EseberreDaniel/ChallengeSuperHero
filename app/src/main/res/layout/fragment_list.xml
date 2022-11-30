@@ -10,17 +10,17 @@
         android:id="@+id/recycler_heroes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/loading"
+        android:paddingBottom="@dimen/grid_1"
+        app:layout_constraintBottom_toTopOf="@+id/loading_more_items"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_superhero" />
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/loading"
+        android:id="@+id/loading_more_items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="@dimen/grid_2"
+        android:layout_marginBottom="@dimen/grid_2"
         android:indeterminate="true"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"

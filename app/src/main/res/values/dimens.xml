@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="grid_0_5">4dp</dimen>
+    <dimen name="grid_1">8dp</dimen>
+    <dimen name="grid_2">16dp</dimen>
+    <dimen name="grid_2_5">20dp</dimen>
+    <dimen name="grid_4">32dp</dimen>
+    <dimen name="grid_5">40dp</dimen>
+    <dimen name="grid_10">80dp</dimen>
+
+    <dimen name="width_image">180dp</dimen>
+    <dimen name="height_image">160dp</dimen>
+    <dimen name="width_button">64dp</dimen>
+</resources>
