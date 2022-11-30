@@ -1,11 +1,9 @@
 package com.challengesuperhero.framework.presentation.detail.components
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import com.challengesuperhero.databinding.StatsDialogBinding
 import com.challengesuperhero.domain.Powerstats
 import com.challengesuperhero.framework.presentation.constants.Constants

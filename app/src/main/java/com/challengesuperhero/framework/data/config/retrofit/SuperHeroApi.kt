@@ -13,4 +13,5 @@ interface SuperHeroApi {
 
     @GET("{id}")
     suspend fun getInfoById(@Path("id") id: String): Response<SuperHeroResponse>
+
 }

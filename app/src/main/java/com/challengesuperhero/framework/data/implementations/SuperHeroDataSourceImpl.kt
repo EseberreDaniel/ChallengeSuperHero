@@ -14,7 +14,6 @@ class SuperHeroDataSourceImpl @Inject constructor(
 
     override suspend fun getImageById(id: String): Result<ImageResponse> = try {
         val response = superHeroApi.getImageById(id)
-
         if (response.isSuccessful) {
             response.body()?.let { imageInfo ->
                 Result.Success(imageInfo)
@@ -22,14 +21,12 @@ class SuperHeroDataSourceImpl @Inject constructor(
         } else {
             Result.Error(response.message())
         }
-
     } catch (e: Exception) {
         Result.Error(e.message ?: Constants.GENERIC_ERROR)
     }
 
     override suspend fun getInfoById(id: String): Result<SuperHeroResponse> = try {
         val response = superHeroApi.getInfoById(id)
-
         if (response.isSuccessful) {
             response.body()?.let { information ->
                 Result.Success(information)
@@ -37,7 +34,6 @@ class SuperHeroDataSourceImpl @Inject constructor(
         } else {
             Result.Error(response.message())
         }
-
     } catch (e: Exception) {
         Result.Error(e.message ?: Constants.GENERIC_ERROR)
     }

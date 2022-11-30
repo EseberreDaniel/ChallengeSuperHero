@@ -1,5 +1,6 @@
 package com.challengesuperhero.framework.presentation.list.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,7 @@ class ImageListAdapter(
 
     private var listImageResponse = mutableListOf<ImageResponse>()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(listImage: MutableList<ImageResponse>) {
         listImageResponse = listImage
         notifyDataSetChanged()

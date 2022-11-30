@@ -18,5 +18,4 @@ class DataSourceModule {
     fun provideSuperHeroDataSourceImpl(superHeroApi: SuperHeroApi): SuperHeroDataSource =
         SuperHeroDataSourceImpl(superHeroApi)
 
-
 }
