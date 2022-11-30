@@ -40,8 +40,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_marginBottom="@dimen/grid_1"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/grid_1"
                     android:orientation="vertical">
 
                     <TextView
