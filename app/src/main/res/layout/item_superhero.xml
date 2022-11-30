@@ -13,6 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/grid_1"
         android:orientation="vertical">
 
         <TextView
@@ -27,6 +28,7 @@
             android:id="@+id/image"
             android:layout_width="@dimen/width_image"
             android:layout_height="@dimen/height_image"
+            android:layout_gravity="center"
             android:layout_marginHorizontal="@dimen/grid_2_5"
             android:contentDescription="@null"
             app:layout_constraintTop_toBottomOf="@+id/name" />
